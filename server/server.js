@@ -20,9 +20,15 @@ server.listen(8080, () =>{
 
 // require socket
 const io = require('socket.io')(server);
+let counter = 0;
 
 // making a connection from the client to the server
+
 io.on('connection', (socket) => {
-    console.log('someone connected');
+    counter++;
+    console.log(counter+ ' ' + 'connected');
+
 });
+
+
 
