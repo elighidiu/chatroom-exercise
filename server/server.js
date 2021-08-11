@@ -27,10 +27,16 @@ let counter = 0;
 io.on('connection', (socket) => {
     counter++;
     console.log(counter + ' ' + 'connected');
-    socket.on('chat message', (message) => {
+    socket.on('sendToAll', (message) => {
         io.emit('chat message', message)
 
     });
+
+    socket.on('sendToMe', (message) => {
+        // if you emit to io, all connected clients will receive the message, whereas the socket.emit will only send it back to the socket of which it received the message.
+        socket.emit('chat message', message)
+    });
+
 
 });
 

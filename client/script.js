@@ -1,8 +1,5 @@
    //define the socket
   let socket = io.connect();
-
-  let inputField = document.getElementById("message");
-  let buttonAll = document.getElementById("all");
   
   socket.on('chat message', (message) =>{
     displayMessage(message);
@@ -11,7 +8,13 @@
   const sendMessageToAll = () =>{
     let inputField = document.querySelector(".message");
     let inputMessage = inputField.value;
-    socket.emit('chat message', inputMessage);
+    socket.emit('sendToAll', inputMessage);
+  }
+
+  const sendMessageToMe = () =>{
+    let inputField = document.querySelector(".message");
+    let inputMessage = inputField.value;
+    socket.emit('sendToMe', inputMessage);
   }
 
   function displayMessage(e){
