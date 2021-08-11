@@ -14,7 +14,7 @@ app.use(express.static(clientPath));
 //use http to serve the app that express provides
 const server = http.createServer(app);
 
-server.listen(8080, () =>{
+server.listen(8080, () => {
     console.log("server running on port 8080");
 });
 
@@ -26,7 +26,11 @@ let counter = 0;
 
 io.on('connection', (socket) => {
     counter++;
-    console.log(counter+ ' ' + 'connected');
+    console.log(counter + ' ' + 'connected');
+    socket.on('chat message', (message) => {
+        io.emit('chat message', message)
+
+    });
 
 });
 

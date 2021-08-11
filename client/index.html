@@ -8,11 +8,11 @@
 </head>
 <body>
  
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><br>
-      <button id="all">Send to all</button><br>
-      <button id="me">Send to me</button>
-    </form>
+
+      <input type="text" class="message" /><br>
+      <button id="all" onclick="sendMessageToAll()">Send to all</button><br>
+      <button id="me" onclick="sendMessageToMe()">Send to me</button>
+
    <div id="messages"></div>
 
     <!-- added the connection to socket.io -->
