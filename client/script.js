@@ -1,8 +1,18 @@
    //define the socket
   let socket = io.connect();
+
+  let username = prompt('Enter a username');
+  displayMessage(`✋ Welcome, ${username}!`);
+ // sent the message & the username to the server
+ socket.emit('new-user', username);
   
   socket.on('chat message', (message) =>{
-    displayMessage(message);
+    //display the username and the message of that user
+    displayMessage(`${message.username}: ${message.message}`);
+  })
+
+  socket.on('user-connected', (username) =>{
+    displayMessage(`${username} joined the chat..`);
   })
 
   const sendMessageToAll = () =>{
