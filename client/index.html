@@ -1,22 +1,57 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chatroom for friends</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
- 
+    <div class="container">
+        <div class="container py-5">
+            <div class="window rounded">
+                <div class="row">
+                    <div class="col"></div>
+                </div>
 
-      <input type="text" class="message" /><br>
-      <button id="all" onclick="sendMessageToAll()">Send to all</button><br>
-      <button id="me" onclick="sendMessageToMe()">Send to me</button>
-
-     <div id="messages"></div>
-
+                <div class="row">
+                        
+                    <div class="col col-md-2 border border-secondary p-3 rounded">Active users:
+                       <ul id="allUsers"></ul>
+                    </div>
+                    <div class="col col-md-10">
+                        <div class="row">
+                            <div class="col">
+                        <div id="messages" class="border border-secondary p-3 mb-3 rounded"></div>
+                    </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col col-md-8">
+                        <input type="text" class="form-control message" />
+                    </div>
+                    <div class="col col-md-2">
+                        <button id="all" onclick="sendMessageToAll()" class="btn btn-info">Send to all</button>
+                    </div>
+                    <div class="col col-md-2">
+                        <button id="me" onclick="sendMessageToMe()" class="btn btn-light">Send to me</button>
+                    </div>
+                </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- added the connection to socket.io -->
     <script src="/socket.io/socket.io.js"></script>
-   <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
