@@ -11,7 +11,7 @@ socket.emit("new-user", username);
 socket.on("chat message", (message) => {
   //display the username and the message of that user
   displayMessage(`${message.username}: ${message.message}`);
-  console.log(username);
+
 });
 
 socket.on("user-connected", (username) => {
@@ -45,6 +45,7 @@ const sendMessageToMe = () => {
 
 function displayMessage(e) {
   let par = document.createElement("p");
+  par.setAttribute('class', 'chat');
   const newContent = document.createTextNode(`${e}`);
   par.appendChild(newContent);
   const currentDiv = document.getElementById("messages");

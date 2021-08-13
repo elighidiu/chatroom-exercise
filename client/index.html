@@ -15,7 +15,7 @@
         <div class="container py-5">
             <div class="window rounded">
                 <div class="row top-bar">
-                    <div class="col">
+                    <div class="col px-3">
                         <div class="row">
                             <div class="col col-md-2"><img
                                     src="https://icons.iconarchive.com/icons/ncrow/mega-pack-1/256/Yahoo-Messenger-icon.png"
@@ -25,42 +25,62 @@
                         </div>
                         <div class="row">
                             <div class="col"><small>Conversation</small>
-                                <small>Edit</small><small>View</small><small>Action</small><small>Help</small></div>
+                                <small>Edit</small><small>View</small><small>Action</small><small>Help</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-<div class="col">    <div class="row">
+                <div class="row colorbg">
+                    <div class="row py-3">
+                        <div class="col col-md-4">
+                            <img src="img/video.png" alt="" height="70">
+                            <img src="img/voice.png" alt="" height="70">
 
-    <div class="col col-md-2 pt-3 round1"><img src="img/icon.png" alt="" width="123" height="123">
-        <ul id="allUsers"></ul>
-    </div>
-    <div class="col col-md-10">
-        <div class="row">
-            <div class="col p-3 round2">
-                <div id="messages"></div>
-              
-            </div>
-        </div>
+                        </div>
+                        <div class="col col-md-8 d-flex justify-content-end">
+                            <img src="img/activities.png" alt="" height="70">
+                            <img src="img/im.png" alt="" height="70">
+                            <img src="img/photos.png" alt="" height="70">
 
-        <div class="row align-items-center round3">
-            <div class="col col-md-8">
-                <input type="text" class="form-control message" />
-            </div>
-            <div class="col col-md-2">
-                <button id="all" onclick="sendMessageToAll()" class="btn btn-info">Send all</button>
-            </div>
-            <div class="col col-md-2">
-                <button id="me" onclick="sendMessageToMe()" class="btn btn-light">Send me</button>
-            </div>
-        </div>
-   
-    </div>
-</div></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
 
+                                <div class="col col-md-2 round1"><img class="p-1" src="img/icon.png" alt="" width="140"
+                                        height="140">
+                                    <ul id="allUsers"></ul>
+                                </div>
+                                <div class="col col-md-10">
+                                    <div class="row">
+                                        <div class="col p-3 round2">
+                                            <div id="messages"></div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row py-4">
+
+                                    </div>
+                                    <div class="row align-items-center round3 py-1">
+                                        <div class="col col-md-8">
+                                            <input type="text" class="form-control message" />
+                                        </div>
+                                        <div class="col col-md-2">
+                                            <button id="all" onclick="sendMessageToAll()" class="btn btn-secondary">Send
+                                                all</button>
+                                        </div>
+                                        <div class="col col-md-2">
+                                            <button id="me" onclick="sendMessageToMe()" class="btn btn-light">Send
+                                                me</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-            
             </div>
         </div>
     </div>
