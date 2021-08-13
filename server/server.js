@@ -29,10 +29,9 @@ let counter = 0;
 io.on('connection', (socket) => {
     counter++;
     console.log(counter + ' ' + 'connected');
-    console.log(users);
 
     socket.on('sendToAll', (message) => {
-        
+
         io.emit('chat message', { message: message, username: users[socket.id] })
 
     });
@@ -46,7 +45,14 @@ io.on('connection', (socket) => {
         // the key of the user will be the id of the socket
         users[socket.id] = username;
         socket.broadcast.emit('user-connected', username);
-        io.emit('user-listed', username);
+      
+       // console.log(users);
+       // converting object into array
+        const usersNames = Object.values(users);
+       // console.log(usersNames);
+
+        io.emit('user-listed', usersNames);
+
     });
 
     socket.on('disconnect', () => {
