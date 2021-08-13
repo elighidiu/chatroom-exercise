@@ -2,7 +2,7 @@
   let socket = io.connect();
 
   let allUsers= document.getElementById('allUsers');
-
+  
   let username = prompt('Enter a username');
   displayMessage(`✋ Welcome, ${username}!`);
  // sent the message & the username to the server
